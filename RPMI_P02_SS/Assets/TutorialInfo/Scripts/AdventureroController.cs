@@ -9,11 +9,14 @@ public class AdventureroController : MonoBehaviour
     {
         InvokeRepeating("InstantiateArrow", 2, 3);
         
+
     }
 
     private void InstantiateArrow() 
     {
         Instantiate(arrow, spawnPoint.position, spawnPoint.rotation);
-        
+    
+
+
     }
 }

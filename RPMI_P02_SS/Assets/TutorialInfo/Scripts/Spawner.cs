@@ -1,20 +1,26 @@
 using JetBrains.Annotations;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
+using static UnityEditor.PlayerSettings;
 
 public class Spawner : MonoBehaviour
 {
     public GameObject adventurer;
-    public Transform spawnPoint;
+    public Transform SpawnPoint;
 
+ 
     private void OnMouseDown()
     {
-     print("spawn");
-     Debug.Log("spawn");
+        
+        print("spawn");
+        Instantiate(adventurer, SpawnPoint.position, SpawnPoint.rotation);
 
-        //Instantiate(adventurer, Vector3.zero, Quaternion.identity);
-        //Instantiate(adventurer, new Vector3(-6.500354f, 0.65f, -18.69f), Quaternion.identity);
-        Instantiate(adventurer, spawnPoint.position, spawnPoint.rotation);
+      
+
+
     }
+
+    
 
 
 }
