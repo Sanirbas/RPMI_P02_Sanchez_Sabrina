@@ -12,6 +12,7 @@ public class Avanzar : MonoBehaviour
     public GameObject moneda;
 
     public TextMeshProUGUI GameOverText;
+    
     public Transform SpawnPoint;
 
     public Inventory inventory;

@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class CoinController : MonoBehaviour
 {
@@ -6,9 +8,12 @@ public class CoinController : MonoBehaviour
     public Inventory inventory;
     public GameObject moneda;
 
+    public TextMeshProUGUI scoreText;
+
     private void Start()
     {
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>(); //En "Find" se debería buscar el nombre que tenga por jerarquía - En "GetComponent" se pone el tipo que es el inventario, va parentesis aunque no tenga nada adentro
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();//En "Find" se debería buscar el nombre que tenga por jerarquía - En "GetComponent" se pone el tipo que es el inventario, va parentesis aunque no tenga nada adentro
     }
 
     private void OnMouseDown()
@@ -17,9 +22,18 @@ public class CoinController : MonoBehaviour
         //inventory.coins+= 1;
         print("clik mouse");
         inventory.coin = inventory.coin + 1;
-        moneda.SetActive(false);
+
+        Debug.Log("Inventory: " + inventory);
+        Debug.Log("ScoreText: " + scoreText);
+
+
+        //scoreText.text = inventory.coin.ToString();
+        scoreText.SetText(inventory.coin.ToString());
+        //scoreText.enabled = true;
+
 
         print(inventory.coin);
+        moneda.SetActive(false);
     }
 
 

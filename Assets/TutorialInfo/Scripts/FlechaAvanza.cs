@@ -13,5 +13,10 @@ public class FlechaAvanza : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Player2"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
