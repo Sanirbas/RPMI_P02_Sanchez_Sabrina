@@ -20,11 +20,9 @@ public class CoinController : MonoBehaviour
     {
         //inventory.coins++; es solo para sumar de a uno
         //inventory.coins+= 1;
-        print("clik mouse");
+        
         inventory.coin = inventory.coin + 1;
 
-        Debug.Log("Inventory: " + inventory);
-        Debug.Log("ScoreText: " + scoreText);
 
 
         //scoreText.text = inventory.coin.ToString();
